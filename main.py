@@ -40,15 +40,24 @@ def main():
 def check_input(root, canvas, input):
     global flag
     global start_time
+    global counter 
     if flag:
+        counter = 0
         flag = False
         start_time = time.time()
         
-    if input.get() == " ".join(Text):
-        print(start_time, time.time())
+    if len(input.get()) == len(" ".join(Text)):
+        for i in range(len(Text)):
+            if input.get()[i] != Text[i]:
+                counter += 1
+                print(counter)
         end_time = time.time()
         wpm = calculate_wpm(start_time, end_time, len(Text))
+        
+        print(type(input.get()))
+        accuracy = ((len(Text) - counter) / len(Text))* 100
         canvas.create_text(400, 300, text=f"WPM: {wpm}", fill=yellow, font=("Courier", 14, "italic"))
+        canvas.create_text(400, 350, text=f"Accuracy: {accuracy:.2f}%", fill=yellow, font=("Courier", 14, "italic"))
         flag = True
         input.delete(0, "end")
     
