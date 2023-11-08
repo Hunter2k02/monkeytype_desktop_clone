@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ## Contact
 If you have any questions, suggestions, or issues to report, feel free to contact me:
-- Email: philippo.sanecki@gmail.com
+- Email: hachqet@gmail.com
 
 I appreciate your interest and contribution to this project. Happy typing!
 
